@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Satvik Sunil Bodke — DevOps Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, interactive portfolio showcasing DevOps and Cloud Engineering projects. Built with React, deployed on GitHub Pages.
 
-## Available Scripts
+🔗 **Live:** [https://satvik55.github.io/my-portfolio](https://satvik55.github.io/my-portfolio)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open https://satvik55.github.io/my-portfolio to view it in your browser.
+- **7 DevOps / Cloud projects** — each with a 4-image carousel, tech tags, and an expandable detail panel (Problem Statement · Architecture · Key Features · Tech Stack · Challenges · Outcome)
+- **Full-screen lightbox** — click any project image or certification to view it enlarged, with keyboard and arrow navigation
+- **Scroll-aware sidebar** — active nav link updates automatically as you scroll through sections
+- **6 industry certifications** with hover zoom and lightbox viewer
+- **Contact form** — Name, Email, Subject, Message
+- Responsive layout, Inter typography, smooth transitions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Layer | Technology |
+|---|---|
+| Framework | React 18 (Create React App) |
+| UI Template | HTML5 UP — Strata |
+| Fonts | Inter — Google Fonts |
+| Icons | Font Awesome 5 |
+| Deployment | GitHub Pages (`gh-pages`) |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Projects
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| # | Project | Stack |
+|---|---|---|
+| 1 | **Argus** — Kubernetes Observability Platform | Kubernetes · Prometheus · Grafana · ArgoCD · AWS |
+| 2 | **AutoDeploy** — CI/CD Automation Pipeline | Jenkins · Docker · Terraform · Ansible · AWS |
+| 3 | **CloudOps Tracker** — Incident Management System | Docker · PHP · MySQL · AWS |
+| 4 | **Serverless Student Management** | AWS Lambda · API Gateway · DynamoDB |
+| 5 | **AWS TalentPool HR Platform** | EC2 · ALB · Auto Scaling · RDS |
+| 6 | **FinOps Fault Tolerant System** | Lambda · CloudWatch · Cost Optimisation |
+| 7 | **Cyber Canvas** — Virtual Art Gallery | HTML · CSS · JavaScript · Firebase |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Certifications
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- AWS Certified Solutions Architect
+- Linux Foundation — Introduction to Linux
+- OCI Foundations Associate
+- OCI Architect Associate
+- OCI Architect Professional
+- OCI DevOps Professional
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
+- Node.js 16+
+- npm 8+
 
-## Learn More
+### Install & Run
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/satvik55/my-portfolio.git
+cd my-portfolio
+npm install
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Opens at [http://localhost:3000/my-portfolio](http://localhost:3000/my-portfolio)
 
-### Code Splitting
+### Build & Deploy to GitHub Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run build     # production build
+npm run deploy    # push to gh-pages branch
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Project Structure
 
-### Making a Progressive Web App
+```
+src/
+├── components/
+│   ├── Header.js          # Sidebar with scroll-aware active nav
+│   ├── About.js           # Hero banner + intro text
+│   ├── Skills.js          # Skills section
+│   ├── Certifications.js  # Cert grid with lightbox
+│   ├── Projects.js        # Project cards — slider + expandable detail
+│   ├── Contact.js         # Contact form
+│   └── Lightbox.js        # Full-screen image viewer (keyboard + arrow nav)
+├── App.js
+└── App.css                # Design tokens + all custom styles
+public/
+├── assets/                # Strata template CSS / fonts / icons
+└── images/                # Project screenshots + cert images
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Satvik Sunil Bodke** — DevOps Engineer | AWS Certified
 
-### Deployment
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/satvik-bodke-b9a229194)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/satvik55)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:satvikbodke@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Portfolio content © Satvik Sunil Bodke.  
+UI template: [Strata by HTML5 UP](https://html5up.net/strata) — [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).

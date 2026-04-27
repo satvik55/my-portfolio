@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import './App.css';
 
-// Import all the components
+// Components
 import Header from './components/Header';
 import About from './components/About';
 import Skills from './components/Skills';
-import Accomplishments from './components/Accomplishments';
+import Certifications from './components/Certifications';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
 
 class App extends Component {
@@ -12,11 +14,12 @@ class App extends Component {
     return (
       <div id="wrapper">
         <Header />
-        
+
         <div id="main">
           <About />
           <Skills />
-          <Accomplishments />
+          <Certifications />
+          <Projects />
           <Contact />
         </div>
       </div>

@@ -6,15 +6,16 @@ export default function Skills() {
       <div className="container">
         <h3>Skills</h3>
         <p>
-          Here are some of the key technologies and skills I have acquired during my training and self-study.
+          Core DevOps and Cloud technologies focused on building scalable, automated, and production-ready systems.
         </p>
         <ul className="feature-icons">
-          <li className="icon solid fa-code">HTML5 & CSS3</li>
-          <li className="icon solid fa-cubes">JavaScript (ES6+)</li>
-          <li className="icon solid fa-book">React.js</li>
-          <li className="icon solid fa-coffee">Firebase</li>
-          <li className="icon solid fa-bolt">Responsive Design</li>
-          <li className="icon solid fa-users">Git & GitHub</li>
+          <li className="icon solid fa-sync">CI/CD & GitOps: Jenkins, GitHub Actions, ArgoCD</li>
+          <li className="icon solid fa-box">Containers: Docker, Kubernetes (k3s), Helm</li>
+          <li className="icon solid fa-cloud">Cloud (AWS): EC2, VPC, S3, IAM, Lambda, ALB</li>
+          <li className="icon solid fa-cogs">Infrastructure as Code: Terraform, Ansible</li>
+          <li className="icon solid fa-chart-line">Monitoring: Prometheus, Grafana, CloudWatch</li>
+          <li className="icon solid fa-shield-alt">Security: Trivy, IAM, RBAC</li>
+          <li className="icon solid fa-terminal">Tools: Linux, Bash, Git, AWS CLI, Nginx</li>
         </ul>
       </div>
     </section>
