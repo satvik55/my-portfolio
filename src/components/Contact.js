@@ -9,50 +9,57 @@ export default function Contact() {
   };
 
   return (
-    <section id="four">
-      <div className="container">
-        <header className="major">
-          <h2>Contact Me</h2>
-          <p>Feel free to reach out — I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.</p>
-        </header>
+    <section id="contact" className="section">
+      <div className="section__inner">
+        <div className="section__header">
+          <span className="section__tag">05 · Contact</span>
+          <h2 className="section__title">Get In Touch</h2>
+        </div>
 
-        {sent ? (
-          <div className="contact-success">
-            <span className="icon solid fa-check-circle" />
-            <h3>Message Sent!</h3>
-            <p>Thanks for reaching out. I'll get back to you as soon as possible.</p>
-            <button className="contact-btn contact-btn--primary" onClick={() => setSent(false)}>
-              Send Another Message
-            </button>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <div className="row gtr-uniform">
-              <div className="col-6 col-12-xsmall">
-                <input type="text" name="name" id="name" placeholder="Name" required />
+        <div className="contact-box">
+          {sent ? (
+            <div className="contact-success">
+              <div className="success-icon">
+                <i className="fas fa-check-circle" />
               </div>
-              <div className="col-6 col-12-xsmall">
-                <input type="email" name="email" id="email" placeholder="Email" required />
-              </div>
-              <div className="col-12">
-                <input type="text" name="subject" id="subject" placeholder="Subject" required />
-              </div>
-              <div className="col-12">
-                <textarea name="message" id="message" placeholder="Message" rows={6} defaultValue="" required />
-              </div>
-              <div className="col-12">
-                <div className="contact-actions">
-                  <button type="submit" className="contact-btn contact-btn--primary">
-                    Send Message
-                  </button>
-                  <button type="reset" className="contact-btn contact-btn--secondary">
-                    Reset Form
-                  </button>
+              <h3>Message Sent!</h3>
+              <p>Thanks for reaching out — I'll get back to you as soon as possible.</p>
+              <button className="contact-btn contact-btn--primary" onClick={() => setSent(false)}>
+                Send Another
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <p>Feel free to reach out for opportunities, collaborations, or just to say hi.</p>
+              <div className="contact-row">
+                <div className="contact-field">
+                  <label htmlFor="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required />
+                </div>
+                <div className="contact-field">
+                  <label htmlFor="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required />
                 </div>
               </div>
-            </div>
-          </form>
-        )}
+              <div className="contact-field">
+                <label htmlFor="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+              </div>
+              <div className="contact-field">
+                <label htmlFor="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message..." rows={5} required />
+              </div>
+              <div className="contact-actions">
+                <button type="submit" className="contact-btn contact-btn--primary">
+                  Send Message
+                </button>
+                <button type="reset" className="contact-btn contact-btn--secondary">
+                  Reset
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
       </div>
     </section>
   );

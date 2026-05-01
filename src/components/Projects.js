@@ -230,12 +230,13 @@ function ProjectCard({ project }) {
 
 export default function Projects() {
   return (
-    <section id="three" className="projects-section">
-      <div className="container">
-        <header className="major">
-          <h2>My Projects</h2>
-          <p>DevOps and Cloud Engineering projects — scalable, fault-tolerant, and production-ready.</p>
-        </header>
+    <section id="projects" className="section section--alt">
+      <div className="section__inner">
+        <div className="section__header">
+          <span className="section__tag">04 · Projects</span>
+          <h2 className="section__title">My Projects</h2>
+          <p className="section__sub">DevOps and Cloud Engineering projects — scalable, fault-tolerant, production-ready.</p>
+        </div>
         <div className="proj-grid">
           {projects.map(p => <ProjectCard key={p.id} project={p} />)}
         </div>

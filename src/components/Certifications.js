@@ -3,7 +3,7 @@ import Lightbox from './Lightbox';
 
 const BASE = process.env.PUBLIC_URL + '/images/';
 
-const certs = [
+const CERTS = [
   { title: 'AWS Certified Solutions Architect',        image: BASE + 'aws.png'            },
   { title: 'Linux Foundation – Introduction to Linux', image: BASE + 'linux.png'          },
   { title: 'OCI Foundations Associate',                image: BASE + 'oci-foundations.jpg' },
@@ -14,32 +14,27 @@ const certs = [
 
 export default function Certifications() {
   const [lbIndex, setLbIndex] = useState(null);
-
-  const certImages = certs.map(c => c.image);
+  const images = CERTS.map(c => c.image);
 
   return (
-    <section id="certifications" className="certs-section">
-      <div className="container">
-        <header className="major">
-          <h2>Certifications</h2>
-          <p>Industry-recognised cloud and DevOps certifications.</p>
-        </header>
+    <section id="certs" className="section section--alt">
+      <div className="section__inner">
+        <div className="section__header">
+          <span className="section__tag">03 · Certifications</span>
+          <h2 className="section__title">Credentials</h2>
+          <p className="section__sub">Industry-recognised cloud and DevOps certifications</p>
+        </div>
 
         <div className="cert-grid">
-          {certs.map((c, i) => (
-            <div
-              key={i}
-              className="cert-card"
-              onClick={() => setLbIndex(i)}
-              title="Click to enlarge"
-            >
-              <div className="cert-img-wrap">
+          {CERTS.map((c, i) => (
+            <div key={i} className="cert-card" onClick={() => setLbIndex(i)}>
+              <div className="cert-card__img-wrap">
                 <img src={c.image} alt={c.title} />
-                <div className="cert-zoom-hint">
-                  <span className="icon solid fa-search-plus" />
+                <div className="cert-card__overlay">
+                  <i className="fas fa-expand-alt" />
                 </div>
               </div>
-              <p className="cert-title">{c.title}</p>
+              <p className="cert-card__title">{c.title}</p>
             </div>
           ))}
         </div>
@@ -47,7 +42,7 @@ export default function Certifications() {
 
       {lbIndex !== null && (
         <Lightbox
-          images={certImages}
+          images={images}
           index={lbIndex}
           alt="Certification"
           onClose={() => setLbIndex(null)}
