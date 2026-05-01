@@ -17,13 +17,10 @@ export default function Certifications() {
   const images = CERTS.map(c => c.image);
 
   return (
-    <section id="certs" className="section section--alt">
-      <div className="section__inner">
-        <div className="section__header">
-          <span className="section__tag">03 · Certifications</span>
-          <h2 className="section__title">Credentials</h2>
-          <p className="section__sub">Industry-recognised cloud and DevOps certifications</p>
-        </div>
+    <section id="certs" className="certs-section-wrap">
+      <div className="certs-inner">
+        <span className="section-label">Certifications</span>
+        <h2 className="certs-heading">Credentials</h2>
 
         <div className="cert-grid">
           {CERTS.map((c, i) => (

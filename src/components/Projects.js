@@ -146,7 +146,7 @@ const projects = [
   },
 ];
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, index = 0 }) {
   const [imgIdx, setImgIdx]     = useState(0);
   const [expanded, setExpanded] = useState(false);
   const [lbIndex, setLbIndex]   = useState(null);   // null = closed, number = open at that index
@@ -181,6 +181,7 @@ function ProjectCard({ project }) {
 
         {/* ── Info ── */}
         <div className="proj-body">
+          <span className="proj-num">{String(index + 1).padStart(2, '0')}</span>
           <h3 className="proj-title">{project.title}</h3>
           <p className="proj-desc">{project.shortDesc}</p>
 
@@ -230,16 +231,13 @@ function ProjectCard({ project }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="section section--alt">
-      <div className="section__inner">
-        <div className="section__header">
-          <span className="section__tag">04 · Projects</span>
-          <h2 className="section__title">My Projects</h2>
-          <p className="section__sub">DevOps and Cloud Engineering projects — scalable, fault-tolerant, production-ready.</p>
-        </div>
-        <div className="proj-grid">
-          {projects.map(p => <ProjectCard key={p.id} project={p} />)}
-        </div>
+    <section id="projects" className="work-section">
+      <div className="work-inner">
+        <span className="section-label">My Work</span>
+        <h2 className="work-heading">Selected Projects</h2>
+      </div>
+      <div className="proj-grid">
+        {projects.map((p, i) => <ProjectCard key={p.id} project={p} index={i} />)}
       </div>
     </section>
   );

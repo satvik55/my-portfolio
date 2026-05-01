@@ -1,66 +1,67 @@
 import React from 'react';
 
-const GROUPS = [
-  {
-    icon: 'fas fa-cloud',
-    title: 'Cloud · AWS',
-    color: '#FF9900',
-    items: ['EC2', 'VPC', 'S3', 'IAM', 'Lambda', 'ALB', 'RDS', 'CloudWatch', 'Route 53'],
-  },
-  {
-    icon: 'fas fa-dharmachakra',
-    title: 'Containers & Orchestration',
-    color: '#326CE5',
-    items: ['Docker', 'Kubernetes', 'Helm', 'k3s', 'Docker Compose'],
-  },
-  {
-    icon: 'fas fa-code-branch',
-    title: 'CI/CD & GitOps',
-    color: '#2bbbad',
-    items: ['Jenkins', 'GitHub Actions', 'ArgoCD', 'GitLab CI', 'Webhooks'],
-  },
-  {
-    icon: 'fas fa-layer-group',
-    title: 'Infrastructure as Code',
-    color: '#7B42F6',
-    items: ['Terraform', 'Ansible', 'Bash Scripting', 'CloudFormation'],
-  },
-  {
-    icon: 'fas fa-chart-line',
-    title: 'Monitoring & Observability',
-    color: '#F46800',
-    items: ['Prometheus', 'Grafana', 'CloudWatch', 'Datadog', 'ELK Stack'],
-  },
-  {
-    icon: 'fas fa-shield-alt',
-    title: 'Security & OS',
-    color: '#2bbbad',
-    items: ['Trivy', 'IAM Policies', 'RBAC', 'Linux', 'Nginx', 'Git'],
-  },
+const TOOLS = [
+  { id: 'docker',     label: 'Docker'      },
+  { id: 'kubernetes', label: 'Kubernetes'  },
+  { id: 'terraform',  label: 'Terraform'   },
+  { id: 'ansible',    label: 'Ansible'     },
+  { id: 'jenkins',    label: 'Jenkins'     },
+  { id: 'prometheus', label: 'Prometheus'  },
+  { id: 'grafana',    label: 'Grafana'     },
+  { id: 'github',     label: 'GitHub'      },
+  { id: 'linux',      label: 'Linux'       },
+  { id: 'nginx',      label: 'Nginx'       },
+  { id: 'python',     label: 'Python'      },
+  { id: 'helm',       label: 'Helm'        },
+  { id: 'argo',       label: 'ArgoCD'      },
+  { id: 'vault',      label: 'Vault'       },
+  { id: 'datadog',    label: 'Datadog'     },
 ];
+
+const SI = 'https://cdn.simpleicons.org/';
+
+/* Duplicate for seamless loop */
+const DOUBLED = [...TOOLS, ...TOOLS];
 
 export default function Skills() {
   return (
-    <section id="skills" className="section section--alt">
-      <div className="section__inner">
-        <div className="section__header">
-          <span className="section__tag">02 · Skills</span>
-          <h2 className="section__title">Tech Stack</h2>
-          <p className="section__sub">Core technologies I use to build production-ready systems</p>
-        </div>
+    <section id="skills" className="techstack-section">
+      <div className="techstack-inner">
+        <span className="section-label">Tech Stack</span>
+        <h2 className="techstack-heading">What I Work With</h2>
+      </div>
 
-        <div className="skills__grid">
-          {GROUPS.map(g => (
-            <div key={g.title} className="skill-card">
-              <div className="skill-card__icon" style={{ '--sk-color': g.color }}>
-                <i className={g.icon} />
-              </div>
-              <h3 className="skill-card__title">{g.title}</h3>
-              <div className="skill-card__tags">
-                {g.items.map(item => (
-                  <span key={item} className="skill-tag">{item}</span>
-                ))}
-              </div>
+      {/* Marquee row 1 — left to right */}
+      <div className="marquee-wrap">
+        <div className="marquee marquee--fwd">
+          {DOUBLED.map((t, i) => (
+            <div key={i} className="marquee-item">
+              <img
+                src={`${SI}${t.id}`}
+                alt={t.label}
+                width={32}
+                height={32}
+                style={{ filter: 'brightness(0) invert(1)', opacity: 0.75 }}
+              />
+              <span>{t.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Marquee row 2 — right to left */}
+      <div className="marquee-wrap">
+        <div className="marquee marquee--rev">
+          {DOUBLED.map((t, i) => (
+            <div key={i} className="marquee-item">
+              <img
+                src={`${SI}${t.id}`}
+                alt={t.label}
+                width={32}
+                height={32}
+                style={{ filter: 'brightness(0) invert(1) sepia(1) saturate(6) hue-rotate(140deg)', opacity: 0.75 }}
+              />
+              <span>{t.label}</span>
             </div>
           ))}
         </div>
