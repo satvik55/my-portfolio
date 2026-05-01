@@ -6,7 +6,7 @@ const SI = 'https://cdn.simpleicons.org/';
 const LOGOS = [
   { id: 'docker',     label: 'Docker'      },
   { id: 'kubernetes', label: 'Kubernetes'  },
-  { id: 'amazonaws',  label: 'AWS'         },
+  { id: 'datadog',    label: 'Datadog'     },
   { id: 'jenkins',    label: 'Jenkins'     },
   { id: 'terraform',  label: 'Terraform'   },
   { id: 'ansible',    label: 'Ansible'     },
@@ -18,7 +18,7 @@ const LOGOS = [
   { id: 'nginx',      label: 'Nginx'       },
   { id: 'github',     label: 'GitHub'      },
   { id: 'helm',       label: 'Helm'        },
-  { id: 'argocd',     label: 'ArgoCD'      },
+  { id: 'argo',       label: 'ArgoCD'      },
   { id: 'vault',      label: 'Vault'       },
 ];
 
