@@ -1,5 +1,7 @@
 import React from 'react';
 
+const SI = 'https://cdn.simpleicons.org/';
+
 const TOOLS = [
   { id: 'docker',     label: 'Docker'      },
   { id: 'kubernetes', label: 'Kubernetes'  },
@@ -18,30 +20,23 @@ const TOOLS = [
   { id: 'datadog',    label: 'Datadog'     },
 ];
 
-const SI = 'https://cdn.simpleicons.org/';
+const D = [...TOOLS, ...TOOLS]; // double for seamless loop
 
-/* Duplicate for seamless loop */
-const DOUBLED = [...TOOLS, ...TOOLS];
-
-export default function Skills() {
+export default function TechStack() {
   return (
-    <section id="skills" className="techstack-section">
-      <div className="techstack-inner">
-        <span className="section-label">Tech Stack</span>
-        <h2 className="techstack-heading">What I Work With</h2>
-      </div>
+    <section id="skills" className="techstack">
+      <h2>My Techstack</h2>
 
-      {/* Marquee row 1 — left to right */}
-      <div className="marquee-wrap">
-        <div className="marquee marquee--fwd">
-          {DOUBLED.map((t, i) => (
-            <div key={i} className="marquee-item">
+      {/* Row 1 — forward */}
+      <div className="marquee-outer">
+        <div className="marquee-track marquee-track--fwd">
+          {D.map((t, i) => (
+            <div key={i} className="marquee-chip">
               <img
                 src={`${SI}${t.id}`}
                 alt={t.label}
-                width={32}
-                height={32}
-                style={{ filter: 'brightness(0) invert(1)', opacity: 0.75 }}
+                width={28} height={28}
+                style={{ filter: 'brightness(0) invert(1)', opacity: .7 }}
               />
               <span>{t.label}</span>
             </div>
@@ -49,17 +44,16 @@ export default function Skills() {
         </div>
       </div>
 
-      {/* Marquee row 2 — right to left */}
-      <div className="marquee-wrap">
-        <div className="marquee marquee--rev">
-          {DOUBLED.map((t, i) => (
-            <div key={i} className="marquee-item">
+      {/* Row 2 — reverse, teal tinted */}
+      <div className="marquee-outer">
+        <div className="marquee-track marquee-track--rev">
+          {D.map((t, i) => (
+            <div key={i} className="marquee-chip">
               <img
                 src={`${SI}${t.id}`}
                 alt={t.label}
-                width={32}
-                height={32}
-                style={{ filter: 'brightness(0) invert(1) sepia(1) saturate(6) hue-rotate(140deg)', opacity: 0.75 }}
+                width={28} height={28}
+                style={{ filter: 'brightness(0) invert(1) sepia(1) saturate(6) hue-rotate(140deg)', opacity: .7 }}
               />
               <span>{t.label}</span>
             </div>

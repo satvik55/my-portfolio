@@ -1,54 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const ROLES = ['Cloud Engineer', 'DevOps Fresher', 'AWS Certified'];
-
-export default function Hero() {
-  const [roleIdx, setRoleIdx] = useState(0);
-
-  useEffect(() => {
-    const t = setInterval(() => setRoleIdx(i => (i + 1) % ROLES.length), 2500);
-    return () => clearInterval(t);
-  }, []);
-
+export default function Landing() {
   return (
-    <section id="hero" className="landing">
-      {/* Glow orbs */}
-      <div className="landing__orb landing__orb--1" />
-      <div className="landing__orb landing__orb--2" />
+    <section className="landing-section" id="landingDiv">
+      <div className="landing-container">
 
-      <div className="landing__body">
-        <p className="landing__hello">Hello, I'm</p>
+        {/* Glow circles */}
+        <div className="landing-circle1" />
+        <div className="landing-circle2" />
 
-        <h1 className="landing__name">
-          <span className="landing__name-line">SATVIK</span>
-          <span className="landing__name-line landing__name-line--accent">BODKE</span>
-        </h1>
-
-        <div className="landing__role">
-          {ROLES.map((r, i) => (
-            <span
-              key={r}
-              className={`landing__role-item${i === roleIdx ? ' landing__role-item--active' : ''}`}
-            >
-              {r}
-            </span>
-          ))}
+        {/* Avatar image in center */}
+        <div className="landing-avatar">
+          <img
+            src={process.env.PUBLIC_URL + '/images/avatar.jpg'}
+            alt="Satvik Bodke"
+          />
         </div>
 
-        <div className="landing__cta">
-          <button onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-            className="landing__btn landing__btn--primary">
-            View My Work
-          </button>
-          <a href="mailto:satvikbodke@gmail.com" className="landing__btn landing__btn--ghost">
-            Get In Touch
-          </a>
+        {/* Left — name intro */}
+        <div className="landing-intro">
+          <h2>Hello, I'm</h2>
+          <h1>
+            SATVIK<br />
+            <span>BODKE</span>
+          </h1>
         </div>
-      </div>
 
-      <div className="landing__scroll">
-        <div className="landing__scroll-line" />
-        <span>scroll</span>
+        {/* Right — role */}
+        <div className="landing-info">
+          <h3>An</h3>
+          <h2 className="landing-info-h2">
+            <div className="landing-role-wrap">
+              <span className="landing-role-item">AWS Certified</span>
+              <span className="landing-role-item">DevOps Fresher</span>
+              <span className="landing-role-item">Cloud Engineer</span>
+            </div>
+          </h2>
+          <h2>
+            <div className="landing-h2-info">Open to Work</div>
+          </h2>
+        </div>
+
+        {/* Scroll cue */}
+        <div className="landing-scroll">
+          <div className="landing-scroll-line" />
+          <span>scroll</span>
+        </div>
+
       </div>
     </section>
   );

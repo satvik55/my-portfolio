@@ -5,26 +5,35 @@ import Background    from './components/Background';
 import Navbar        from './components/Navbar';
 import Hero          from './components/Hero';
 import About         from './components/About';
+import CertTimeline  from './components/CertTimeline';
+import WorkSection   from './components/WorkSection';
 import Skills        from './components/Skills';
-import Certifications from './components/Certifications';
-import Projects      from './components/Projects';
 import Contact       from './components/Contact';
+import SocialIcons   from './components/SocialIcons';
 
 export default function App() {
   return (
     <>
+      {/* Fixed floating DevOps logos behind everything */}
       <Background />
+
+      {/* Fixed social icons + resume button */}
+      <SocialIcons />
+
+      {/* Page content */}
       <Navbar />
-      <main className="main-content">
+
+      <main>
         <Hero />
         <About />
+        <WorkSection />
         <Skills />
-        <Certifications />
-        <Projects />
+        <CertTimeline />
         <Contact />
       </main>
+
       <footer className="site-footer">
-        <p>© 2025 Satvik Sunil Bodke · Built with React · Deployed on GitHub Pages</p>
+        © 2025 Satvik Sunil Bodke
       </footer>
     </>
   );

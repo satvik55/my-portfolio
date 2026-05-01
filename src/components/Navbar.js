@@ -1,35 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
+const scrollTo = (id) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <header className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
-      {/* Left — name/logo */}
-      <a href="#hero" className="nav__logo">SATVIK BODKE</a>
+    <>
+      <div className="nav-fade" />
+      <header className="header">
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <a className="navbar-title" href="#" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+          SATVIK BODKE
+        </a>
 
-      {/* Centre — email (hidden on mobile) */}
-      <a href="mailto:satvikbodke@gmail.com" className="nav__email">
-        satvikbodke@gmail.com
-      </a>
+        <a className="navbar-connect" href="mailto:satvikbodke@gmail.com">
+          satvikbodke@gmail.com
+        </a>
 
-      {/* Right — links */}
-      <ul className="nav__links">
-        <li><button onClick={() => scrollTo('about')}>About</button></li>
-        <li><button onClick={() => scrollTo('projects')}>Work</button></li>
-        <li><button onClick={() => scrollTo('contact')}>Contact</button></li>
-      </ul>
-    </header>
+        <ul>
+          <li onClick={() => scrollTo('about')}>About</li>
+          <li onClick={() => scrollTo('work')}>Work</li>
+          <li onClick={() => scrollTo('contact')}>Contact</li>
+        </ul>
+      </header>
+    </>
   );
 }

@@ -1,52 +1,76 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Contact() {
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-  };
-
   return (
     <section id="contact" className="contact-section">
-      <div className="contact-inner">
-        <span className="section-label">Contact</span>
-        <h2 className="contact-heading">Let's Work Together</h2>
-        <p className="contact-sub">
-          Open to full-time roles, internships, and freelance projects in cloud & DevOps.
-        </p>
+      <div className="contact-container section-container">
+        <h3>Let's Connect</h3>
 
-        <div className="contact-box">
-          {sent ? (
-            <div className="contact-success">
-              <i className="fas fa-check-circle" style={{ fontSize: '3rem', color: 'var(--accent)', marginBottom: '1rem' }} />
-              <h3>Message sent!</h3>
-              <p>I'll get back to you soon.</p>
-              <button className="cta-btn" onClick={() => setSent(false)}>Send another</button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <div className="form-row">
-                <div className="form-field">
-                  <label>Name</label>
-                  <input type="text" name="name" placeholder="Your name" required />
-                </div>
-                <div className="form-field">
-                  <label>Email</label>
-                  <input type="email" name="email" placeholder="your@email.com" required />
-                </div>
-              </div>
-              <div className="form-field">
-                <label>Message</label>
-                <textarea name="message" rows={5} placeholder="Tell me about the opportunity..." required />
-              </div>
-              <div className="form-actions">
-                <button type="submit" className="cta-btn">Send Message</button>
-                <button type="reset" className="ghost-btn">Reset</button>
-              </div>
-            </form>
-          )}
+        <div className="contact-flex">
+
+          {/* Box 1 — Email & Location */}
+          <div className="contact-box">
+            <h4>Email</h4>
+            <p>
+              <a href="mailto:satvikbodke@gmail.com">satvikbodke@gmail.com</a>
+            </p>
+            <h4>Location</h4>
+            <p>India · Open to Remote</p>
+            <h4>Status</h4>
+            <p style={{ color: '#4cff8a' }}>● Available for hire</p>
+          </div>
+
+          {/* Box 2 — Social links */}
+          <div className="contact-box">
+            <h4>Socials</h4>
+            <p></p>
+            <a
+              href="https://github.com/satvik55"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-social"
+            >
+              GitHub &nbsp;↗
+            </a>
+            <a
+              href="https://www.linkedin.com/in/satvik-bodke-b9a229194"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-social"
+            >
+              LinkedIn &nbsp;↗
+            </a>
+            <a
+              href="https://twitter.com/BodkeSatvik"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-social"
+            >
+              Twitter &nbsp;↗
+            </a>
+            <a
+              href="https://www.instagram.com/_satvik5/"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-social"
+            >
+              Instagram &nbsp;↗
+            </a>
+          </div>
+
+          {/* Box 3 — Attribution */}
+          <div className="contact-box">
+            <h2>
+              Built by <span>Satvik Bodke</span>
+            </h2>
+            <h5>
+              <span>©</span> 2025
+            </h5>
+            <p style={{ marginTop: 20, fontSize: 14 }}>
+              AWS Certified · Cloud &amp; DevOps · Fresher
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
